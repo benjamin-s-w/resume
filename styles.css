@@ -1,0 +1,789 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1.2;
+}
+ol, ul {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  list-style-position: outside;
+  list-style-type: disc;
+}
+h2, h3, p {
+  line-height: 1.2;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* end reset */
+
+/* default styles that apply to mobile, tablet, and desktop */
+
+/* CSS variables */
+
+:root {
+  --rockwell: 'Rockwell', serif;
+	--open-sans: 'Open Sans', sans-serif;
+	--open-sans-300: 300;
+	--open-sans-400: 400;
+  --open-sans-700: 700;
+  --open-sans: 'Calibri', sans-serif;
+  --open-sans-700: 700;
+	--dark-gray: #555;/* visited URL color */
+	--med-gray: #999;/* hover URL color */
+	--light-gray: #ddd;/* active URL color */
+	--highlighter-y: rgba(242, 255, 0, .5);
+	--highlighter-o: rgba(255, 177, 0, .5);
+}
+
+/* clear URL underline */
+
+a:link {
+	text-decoration: none;
+}
+
+/* etc */
+
+strong {
+	font-weight: var(--open-sans-700);
+}
+
+.readable {
+	text-align: left;
+	line-height: 1.5;
+	margin: 5% 0;
+}
+
+/* Content */
+
+html {
+	overflow-x: hidden;
+}
+
+body {
+	display: grid;
+	grid-template-columns: 20px 2fr 20px;
+	grid-column-gap: 5px;
+	word-wrap: break-word;
+	overflow-x: hidden;
+	width: 100%;
+}
+
+header {
+	grid-row: 1 / 4;
+	grid-column: 1 / -1;
+	margin: 5% 0;
+}
+
+#title-row {
+	grid-row: 1 / 2;
+	grid-column: 2 / -2;
+	display: flex;
+}
+
+h1 {
+	font-family: var(--rockwell);
+	font-weight: bold;
+	font-size: 10vw;
+	padding-left: 15%;
+	margin: 0;
+	text-align: center;
+}
+
+h1 a:link {
+	text-decoration: none;
+	color: black;
+}
+
+h1 a:visited {
+	color: black;
+}
+
+h1 a:hover {
+	color: var(--med-gray);
+}
+
+h1 a:active {
+	color: var(--light-gray);
+}
+
+#title-row a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#menu { /* menu nav button */
+	background: #fff;
+	border: none;
+	margin: 0 5% 0 auto;
+	font-size: 2.5em;
+}
+
+#menu:active {
+	background: var(--med-gray);
+}
+
+#nav {
+	height: 1px;
+	margin: 5% 0;
+  transition: height 300ms ease;
+}
+
+#skills-nav-row {
+	grid-row: 2 / 3;
+	grid-column: 1 / -1;
+	justify-content: center;
+	font-family: var(--open-sans);
+}
+
+#skills-nav-row a:link {
+	position: relative;/* this helps a:active enable a click animation */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 96%;
+	height: 30px;
+	padding: 4px 1%;
+	margin: 4px 1%;
+	font-size: 1.2rem;
+	color: black;
+	background: var(--light-gray);
+}
+
+#skills-nav-row a:visited {
+	color: black;
+}
+
+/* no a:hover in mobile */
+
+#skills-nav-row a:active {/* this enables a click animation  */
+	top: 2px;
+}
+
+#pages-nav-row {
+	grid-row: 3 / 4;
+	grid-column: 1 / -1;
+	justify-content: center;
+	font-family: var(--open-sans);
+}
+
+#pages-nav-row a:link {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 96%;
+	height: 30px;
+	padding: 4px 1%;
+	margin: 4px 1%;
+	font-size: 1.2rem;
+	color: black;
+	background: var(--light-gray);
+}
+
+#pages-nav-row a:visited {
+	color: black;
+}
+
+/* no a:hover in mobile */
+
+#pages-nav-row a:active {
+	top: 2px;
+}
+
+header p {
+	font-family: var(--open-sans);
+	font-size: 1.2rem;
+	line-height: 1.2;
+	margin: 5% 10%;
+	text-align: center;
+}
+
+#about-intro {/* section */
+  grid-column: 2 / -2;
+}
+
+#about-intro li {
+  margin: 0 0 2% 5%;
+  display: list-item;
+}
+
+#experience li {
+  margin-bottom: 2%;
+  display: list-item;
+}
+
+#profile-img {
+  width: 100%;
+}
+
+#profile-img img {
+  display: block;
+  width: 100%;
+  margin: 10% 0;
+}
+
+#experience {/* section */
+  grid-column: 2 / -2;
+}
+
+#experience a:link {
+  text-decoration: none;
+  color: black;
+}
+
+#experience a:visited {
+  color: var(--dark-gray);
+}
+
+#experience a:hover {
+  color: var(--med-gray);
+}
+
+#experience a:active {
+  color: var(--light-gray);
+}
+
+#unfolding {
+  grid-area: ar1;
+}
+
+#diversity {
+  grid-area: ar2;
+}
+
+#hi-fi-redesign {
+  grid-area: ar3;
+}
+
+#lings-lo-fi-redesign {
+  grid-area: ar4;
+}
+
+#education {
+  grid-column: 2 / -2;
+}
+
+#education p {
+  font-family: var(--open-sans);
+  font-size: 1.2rem;
+}
+
+#education p a:link {
+	color: #FF0B88;
+	border-bottom: 5px solid var(--highlighter-y);
+	transition: background-color 500ms ease-in-out;
+}
+
+#education p a:visited {
+	color: #BF0966;
+	border-bottom: 5px solid var(--highlighter-o);
+}
+
+#education p a:hover {
+	background-color: var(--highlighter-y);
+}
+
+#education p a:active {
+	color: #FC0DFF;
+}
+
+#military {
+  grid-column: 2 / -2;
+}
+
+#military p {
+  font-family: var(--open-sans);
+  font-size: 1.2rem;
+}
+
+#lifestyle {
+  grid-column: 2 / -2;
+}
+
+#lifestyle p {
+  font-family: var(--open-sans);
+  font-size: 1.2rem;
+}
+
+h2 {
+  grid-column: 2 / -2;
+  font-family: var(--open-sans);
+  font-weight: var(--open-sans-300);
+  font-size: 2rem;
+  margin: 5% 0 2.5% 0;
+}
+
+h3 {
+  font-family: var(--open-sans);
+  font-weight: var(--open-sans-700);
+  font-size: 1.5rem;
+  margin: 5% 0;
+}
+
+#about-intro p {
+  font-family: var(--open-sans);
+  font-size: 1.2rem;
+  margin: 5% 0;
+}
+
+#experience p {
+  font-family: var(--open-sans);
+  font-size: 1.2rem;
+  margin: 5% 0;
+}
+
+#about-intro ul {
+  font-family: var(--open-sans);
+  font-size: 1.2rem;
+  line-height: 1.2;
+  margin: 5% 0 5% 5%;
+}
+
+#experience ul {
+  font-family: var(--open-sans);
+  font-size: 1.2rem;
+  line-height: 1.2;
+  margin: 5% 0 5% 5%;
+}
+
+footer {
+	/*grid-row: 6 / 8;*/
+	grid-column: 1 / -1;
+	background-color: var(--med-gray);
+	margin-top: 5%;
+}
+
+footer h2 {
+	margin: 40px 0;
+}
+
+#footer-row {
+	grid-row: 7 / 8;
+	grid-column: 1 / -1;
+	font-family: var(--open-sans);
+}
+
+#footer-row a:link {
+	background-color: var(--light-gray);
+	color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 94%;
+	height: 30px;
+	padding: 1%;
+	margin: 1% auto;
+}
+
+#footer-row a:visited {
+	color: var(--med-gray);
+}
+
+#footer-row a:active {
+	background-color: var(--dark-gray);
+	color: black;
+}
+
+/* for accessibility purposes */
+
+.revealed {
+	clip: auto;
+	overflow: hidden;
+	width: auto;
+	position: relative;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+	font-size: 0.01em;
+}
+
+@media only screen and (min-width: 1000px) {
+
+  body {
+    grid-template-columns: 1fr 900px 1fr;
+  }
+
+  header {
+		grid-column: 2 / -2;
+	}
+
+	h1 {
+		font-size: 5rem;
+		padding: 0;
+		margin: auto;
+	}
+
+	#nav {
+		grid-column: 1 / -1;
+    height: auto;
+		margin: 5% 0;
+	}
+
+	header p {
+		margin: 0 10%;
+		font-size: 1.5rem;
+	}
+
+	#menu {
+		display: none;
+	}
+
+	#skills-nav-row {
+		display: flex;
+	}
+
+	#skills-nav-row a:link {
+		height: auto;
+    padding: 10px;
+    margin: 10px;
+		font-size: 1.7rem;
+		transition: box-shadow 500ms ease-in-out;
+	}
+
+	#skills-nav-row a:hover {
+    color: black;
+		background-color: var(--med-gray);
+		box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+	}
+
+	#skills-nav-row a:active {
+		background-color: var(--dark-gray);
+	}
+
+	#pages-nav-row {
+		display: flex;
+	}
+
+	#pages-nav-row a:link {
+		height: auto;
+    padding: 10px;
+    margin: 10px;
+		font-size: 1.7rem;
+		transition: box-shadow 500ms ease-in-out;
+	}
+
+	#pages-nav-row a:hover {
+    color: black;
+		background-color: var(--med-gray);
+		box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+	}
+
+	#pages-nav-row a:active {
+		background-color: var(--dark-gray);
+	}
+
+  /* old header styles that aren't consistent with the rest of my portfolio style
+
+  header {
+    grid-column: 2 / -2;
+    display: grid;
+    grid-gap: 2%;
+    grid-template-areas:
+    "h1 h1"
+    "tagline tagline"
+    "p p"
+    "img aside"
+  }
+
+  #page-title {
+    grid-area: h1;
+    display: flex;
+    justify-content: center;
+    margin: 5% 0 0 0;
+  }
+
+  #page-title a:link {
+    text-decoration: none;
+    color: black;
+  }
+
+  #page-title a:visited {
+    color: var(--dark-gray);
+  }
+
+  #page-title a:hover {
+    color: var(--med-gray);
+  }
+
+  #page-title a:active {
+    color: var(--light-gray);
+  }
+
+  #tagline {
+    grid-area: tagline;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  header p {
+    grid-area: p;
+  }
+
+  #p1 {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  #p1 a:link {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    background-color: var(--light-gray);
+    color: black;
+    width: 98%;
+    margin: 0 1%;
+    padding: 1% 0;
+  }
+
+  #p1 a:visited {
+    color: var(--dark-gray);
+  }
+
+  #p1 a:hover {
+    background-color: var(--med-gray);
+  }
+
+  #p1 a:active {
+    background-color: var(--light-gray);
+  }
+
+  a[href^="tel:"]:before {
+    content: "\260e";
+    margin-right: 0.5em;
+  }
+
+  */
+
+  #about-intro {
+    grid-column: 2 / -2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #about-intro h2 {
+    margin-top: 8%;
+  }
+
+  #profile-img {
+    grid-column: 1 / 2;
+    width: 100%;
+  }
+
+  #profile-img img {
+    display: block;
+    width: 100%;
+    margin: 10% 0;
+  }
+
+  aside {
+    grid-column: 2 / 3;
+  }
+
+  aside h2 {
+    margin-left: 5%;
+  }
+
+  aside ul {
+    font-family: var(--open-sans);
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin: 5% 0 5% 5%;
+  }
+
+  aside li {
+    margin-bottom: 1%;
+    display: list-item;
+  }
+
+  #experience {
+    grid-column: 2 / -2;
+    display: grid;
+    grid-gap: 5%;
+    grid-template-areas:
+    "h2 h2"
+    "ar1 ar2"
+    "ar3 ar4";
+    margin: 5% 0;
+  }
+
+  #experience a:link {
+    text-decoration: none;
+    color: black;
+  }
+
+  #experience a:visited {
+    color: var(--dark-gray);
+  }
+
+  #experience a:hover {
+    color: var(--med-gray);
+  }
+
+  #experience a:active {
+    color: var(--light-gray);
+  }
+
+  #unfolding {
+    grid-area: ar1;
+  }
+
+  #duplicates {
+    grid-area: ar2;
+  }
+
+  #accessibility {
+    grid-area: ar3;
+  }
+
+  #pano {
+    grid-area: ar4;
+  }
+
+  #education {
+    grid-column: 2 / -2;
+    margin: 5% 0;
+  }
+
+  #military {
+    grid-column: 2 / -2;
+  }
+
+  #lifestyle {
+    grid-column: 2 / -2;
+  }
+
+  h1 {
+    font-family: var(--rockwell);
+    font-size: 5rem;
+  }
+
+  h2 {
+    grid-column: 1 / -1;
+    font-family: var(--open-sans);
+    font-weight: var(--open-sans-300);
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  h3 {
+    font-family: var(--open-sans);
+    font-weight: var(--open-sans-700);
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  p {
+    font-family: var(--open-sans);
+    font-size: 1.2rem;
+  }
+
+  ul {
+    font-family: var(--open-sans);
+    font-size: 1.2rem;
+  }
+
+  #about-intro li {
+    margin-bottom: 1%;
+    display: list-item;
+  }
+
+  #experience li {
+    margin-bottom: 1%;
+    display: list-item;
+  }
+
+	footer {
+		grid-column: 1 / -1;
+		display: grid;
+		grid-template-columns: 1fr 900px 1fr;
+	}
+
+	footer h2 {
+		grid-column: 2 / -2;
+		display: flex;
+		justify-content: center;
+	}
+
+	#footer-row {
+		grid-column: 2 / -2;
+		display: flex;
+	}
+
+	#footer-row a:link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 96%;
+		height: 30px;
+		padding: 10px;
+		margin: 10px;
+		color: black;
+		background: var(--light-gray);
+		transition: box-shadow 500ms ease-in-out;
+	}
+
+	#footer-row a:hover {
+		color: white;
+		background-color: var(--med-gray);
+		box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+	}
+
+	.visually-hidden {
+		clip: auto;
+		margin: auto;
+	  overflow: hidden;
+	  padding: 0;
+	  width: auto;
+		position: relative;
+		font-size: .3em;
+	}
+
+/* end desktop media query */
+}
